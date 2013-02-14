@@ -1,0 +1,10 @@
+#canvas {
+  height: 833px ;
+  width: 1200px;
+  background-image: url("the_meme_team.jpeg");
+  margin: auto;
+}
+
+h1 {
+  text-align: center;
+}
