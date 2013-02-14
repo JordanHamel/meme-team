@@ -8,3 +8,10 @@
 h1 {
   text-align: center;
 }
+
+.box {
+  border: 3px solid black;
+  width: 125px;
+  height: 125px;
+  position: absolute;
+}
