@@ -1,12 +1,24 @@
-#canvas {
-  height: 833px ;
+#container {
+  height: 833px;
   width: 1200px;
-  background-image: url("the_meme_team.jpeg");
+  position: relative;
   margin: auto;
 }
 
-h1 {
-  text-align: center;
+#canvas {
+  height: 833px ;
+  width: 1200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#faces-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 833px ;
+  width: 1200px;
 }
 
 .box {
@@ -16,17 +28,15 @@ h1 {
   position: absolute;
   border-radius: 75px;
   box-shadow: 2px 2px 2px #ADFF2F;
+  position: inherit;
+  margin-left: -75px;
+  margin-top: -75px;
 }
 
-#toggle {
+.button {
   width: 100px;
   height: 50px;
 }
-/*
-#toggle-button {
-  width: 100%;
-  margin: auto;
-}*/
 
 .name {
   margin-top: 155px;
@@ -36,4 +46,24 @@ h1 {
   font-family: Helvetica;
   letter-spacing: 3px;
   box-shadow: 2px 2px 2px black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#name-list {
+  float: left;
+  text-decoration: none;
+}
+
+h1 {
+  text-align: center;
+}
+
+li {
+  border: 7px dashed;
+  padding: 8px;
+  background-color: magenta;
+  color: white;
 }
