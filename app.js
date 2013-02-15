@@ -18,7 +18,7 @@ function makeClicksController(element, names) {
       };
 
       // Create a facebox object
-      var faceBox = makeFaceBox(coords, this.canvas);
+      var faceBox = makeFaceBox(coords.x, coords.y, this.canvas);
       this.doNameListSelector();
       this.faceBox = faceBox;
       printFaceBox(faceBox);
@@ -52,10 +52,10 @@ function makeClicksController(element, names) {
 
 var faceBoxes = [];
 
-function makeFaceBox(coords, canvas) {
+function makeFaceBox(coordx, coordy, canvas) {
   var faceBox = {
     name: "unnamed",
-    coords: coords,
+    coords: {x: coordx, y: coordy},
     canvas: canvas
   };
 
@@ -91,7 +91,7 @@ function toggleFaceBoxes(canvas) {
 
 function loadSeedData(seedData){
   $.each(seedData, function(){
-    makeFaceBox(this.coords, this.canvas, this.name);
+    makeFaceBox(this.coords.x, this.coords.y, this.canvas);
   });
 }
 
