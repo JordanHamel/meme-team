@@ -45,21 +45,31 @@ function printFaceBox (facebox) {
       .addClass("box")
       .css("left", facebox.coords.x)
       .css("top", facebox.coords.y)
+      .append($("<div></div>")
+         .addClass("name")
+         .text(facebox.name)
+      )
   )
 }
 
 function toggleFaceBoxes(canvas){
-  canvas = $("#"+canvas);
   if(canvas.is(':empty')){
     $(faceBoxes).each(function () {
       printFaceBox(this);
     });
   } else {
-    $(canvas).empty();
+    canvas.empty();
   }
 }
 
+var faceBoxSeeds = [{
+    name: "Wolf",
+    coords: { x: 529, y: 452 },
+    canvas: $("#canvas")
+  }];
+
 $(function() {
- // any stuff that manipulates the dom
-   makeClicksController($("#canvas"));
+   var canvas = $("#canvas");
+   makeClicksController(canvas);
+   $("#toggle").click(function(){ toggleFaceBoxes(canvas) });
 });

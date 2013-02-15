@@ -10,9 +10,30 @@ h1 {
 }
 
 .box {
-  border: 3px solid black;
+  border: 3px solid #00FFFF;
   width: 150px;
   height: 150px;
   position: absolute;
   border-radius: 75px;
+  box-shadow: 2px 2px 2px #ADFF2F;
+}
+
+#toggle {
+  width: 100px;
+  height: 50px;
+}
+/*
+#toggle-button {
+  width: 100%;
+  margin: auto;
+}*/
+
+.name {
+  margin-top: 155px;
+  text-align: center;
+  background-color: #ADFF2F;
+  border: 3px solid #FF1493;
+  font-family: Helvetica;
+  letter-spacing: 3px;
+  box-shadow: 2px 2px 2px black;
 }
