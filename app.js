@@ -1,6 +1,8 @@
-function makeClicksController(element) {
+function makeClicksController(element, names) {
   var clicksController = {
     canvas: null,
+    faceBox: null,
+    names: names,
 
     bind: function (canvas) {
       this.canvas = canvas;
@@ -16,8 +18,30 @@ function makeClicksController(element) {
       };
 
       // Create a facebox object
-      var name = ; //call list
-      makeFaceBox(coords, this.canvas, name);
+      var faceBox = makeFaceBox(coords, this.canvas);
+      this.doNameListSelector();
+      this.faceBox = faceBox;
+      printFaceBox(faceBox);
+    },
+
+    doNameListSelector: function () {
+      var that = this;
+      //prints name options list
+      var theDiv = $("#name-list");
+      var theUl = $("<ul></ul>");
+
+      for(var i=0; i<this.names.length; i++) {
+        var theLi = $("<li></li>").text(this.names[i]);
+        theUl.append(theLi);
+        theLi.click(function(){
+          that.faceBox.name = $(this).text();
+          $("#name-list").empty();
+          toggleFaceBoxes(that.canvas);
+          toggleFaceBoxes(that.canvas);
+        });
+      }
+
+      theDiv.append(theUl);
     }
   }
 
@@ -28,9 +52,9 @@ function makeClicksController(element) {
 
 var faceBoxes = [];
 
-function makeFaceBox(coords, canvas, name) {
+function makeFaceBox(coords, canvas) {
   var faceBox = {
-    name: name,
+    name: "unnamed",
     coords: coords,
     canvas: canvas
   };
@@ -63,18 +87,7 @@ function toggleFaceBoxes(canvas) {
   }
 }
 
-function showNameList(names) {
-  var theDiv = $("#name-list");
-  var theUl = $("<ul></ul>");
 
-  for(var i=0; i<names.length; i++) {
-    theUl.append(
-      $("<li></li>").text(names[i])
-    )
-  }
-
-  theDiv.append(theUl);
-}
 
 function loadSeedData(seedData){
   $.each(seedData, function(){
@@ -82,7 +95,6 @@ function loadSeedData(seedData){
   });
 }
 
-var names = ["Jordan", "Mario", "Sarah", "Flowers", "Puppies"];
 
 $(function() {
   var canvas = $("#canvas");
@@ -99,8 +111,10 @@ $(function() {
     }
   ];
 
-
-  makeClicksController(canvas);
+  var names = ["Dog", "Courage Wolf", "Honey Boo Boo", "Floating Cat",
+               "Puppies", "WTF Dog", "Squirrel", "Antoine", "Old Spice Man",
+               "Leonardo"];
+  makeClicksController(canvas, names);
   $("#toggle").click(function(){ toggleFaceBoxes(canvas) });
   $("#loadSeedData").click(function(){ loadSeedData(faceBoxSeeds) });
 });
