@@ -1,0 +1,2 @@
+module FaceboxesHelper
+end

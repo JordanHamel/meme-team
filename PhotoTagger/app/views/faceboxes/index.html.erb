@@ -1,0 +1,29 @@
+<h1>Listing faceboxes</h1>
+
+<table>
+  <tr>
+    <th>Canvas</th>
+    <th>Name</th>
+    <th>Coordx</th>
+    <th>Coordy</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @faceboxes.each do |facebox| %>
+  <tr>
+    <td><%= facebox.canvas_id %></td>
+    <td><%= facebox.name %></td>
+    <td><%= facebox.coordx %></td>
+    <td><%= facebox.coordy %></td>
+    <td><%= link_to 'Show', facebox %></td>
+    <td><%= link_to 'Edit', edit_facebox_path(facebox) %></td>
+    <td><%= link_to 'Destroy', facebox, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Facebox', new_facebox_path %>

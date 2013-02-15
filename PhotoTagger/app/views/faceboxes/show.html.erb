@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Canvas:</b>
+  <%= @facebox.canvas_id %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%= @facebox.name %>
+</p>
+
+<p>
+  <b>Coordx:</b>
+  <%= @facebox.coordx %>
+</p>
+
+<p>
+  <b>Coordy:</b>
+  <%= @facebox.coordy %>
+</p>
+
+
+<%= link_to 'Edit', edit_facebox_path(@facebox) %> |
+<%= link_to 'Back', faceboxes_path %>

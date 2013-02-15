@@ -1,0 +1,33 @@
+<%= form_for(@facebox) do |f| %>
+  <% if @facebox.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@facebox.errors.count, "error") %> prohibited this facebox from being saved:</h2>
+
+      <ul>
+      <% @facebox.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :canvas_id %><br />
+    <%= f.text_field :canvas_id %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :coordx %><br />
+    <%= f.number_field :coordx %>
+  </div>
+  <div class="field">
+    <%= f.label :coordy %><br />
+    <%= f.number_field :coordy %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
