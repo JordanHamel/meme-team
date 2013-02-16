@@ -1,0 +1,87 @@
+@import url(http://fonts.googleapis.com/css?family=Capriola);
+
+#container {
+  height: 833px;
+  width: 1200px;
+  position: relative;
+  margin: auto;
+}
+
+#canvas {
+  height: 833px ;
+  width: 1200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  cursor: url("pointing_finger.png");
+}
+
+#faces-image {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 833px ;
+  width: 1200px;
+}
+
+.box {
+  border: 3px solid #00FFFF;
+  width: 150px;
+  height: 150px;
+  position: absolute;
+  border-radius: 75px;
+  box-shadow: 2px 2px 2px #ADFF2F;
+  position: inherit;
+  margin-left: -75px;
+  margin-top: -75px;
+}
+
+.button {
+  width: 150px;
+  height: 75px;
+  border-radius: 10px;
+  color: #ADFF2F;
+  background-color: #FF1493;
+  font-size: 15px;
+  display: block;
+  margin: auto;
+}
+
+.name {
+  margin-top: 155px;
+  text-align: center;
+  background-color: #ADFF2F;
+  border: 3px solid #FF1493;
+  font-family: Helvetica;
+  letter-spacing: 3px;
+  box-shadow: 2px 2px 2px black;
+}
+
+ul {
+  list-style-type: none;
+}
+
+#name-list {
+  float: left;
+  text-decoration: none;
+  position: relative;
+  z-index: 10;
+}
+
+h1 {
+  text-align: center;
+  font-family: 'Capriola', sans-serif;
+  font-size: 60;
+}
+
+li {
+  border: 7px dashed;
+  padding: 8px;
+  background-color: magenta;
+  color: white;
+  cursor: url("add_user_cursor.png");
+}
+
+body {
+  background-image: url("paper_3.png");
+}
